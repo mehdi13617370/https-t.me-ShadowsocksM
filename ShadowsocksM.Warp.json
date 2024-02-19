@@ -1,6 +1,7 @@
 {
   "log": {
     "level": "warn",
+    "output": "box.log",
     "timestamp": true
   },
   "dns": {
@@ -8,12 +9,8 @@
       {
         "tag": "dns-remote",
         "address": "udp://1.1.1.1",
-        "address_resolver": "dns-direct"
-      },
-      {
-        "tag": "dns-trick-direct",
-        "address": "https://sky.rethinkdns.com/",
-        "detour": "direct-fragment"
+        "address_resolver": "dns-direct",
+        "detour": "select"
       },
       {
         "tag": "dns-direct",
@@ -39,20 +36,6 @@
       }
     ],
     "final": "dns-remote",
-    "static_ips": {
-      "sky.rethinkdns.com": [
-        "188.114.97.3",
-        "188.114.96.3",
-        "2a06:98c1:3120::3",
-        "2a06:98c1:3121::3",
-        "104.18.203.232",
-        "104.18.202.232",
-        "188.114.96.3",
-        "188.114.97.3",
-        "2a06:98c1:3120::3",
-        "2a06:98c1:3121::3"
-      ]
-    },
     "independent_cache": true
   },
   "inbounds": [
@@ -90,8 +73,7 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "Warp_in_Warp § 0",
-        "Warp_ir § 1"
+        "WARP § 0"
       ],
       "default": "auto"
     },
@@ -99,41 +81,25 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "Warp_in_Warp § 0",
-        "Warp_ir § 1"
+        "WARP § 0"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "8m0s"
     },
     {
       "type": "wireguard",
-      "tag": "Warp_in_Warp § 0",
+      "tag": "WARP § 0",
       "local_address": [
         "172.16.0.2/24",
-        "2606:4700:110:8a00:987e:4080:5051:1416/128"
+        "2606:4700:110:82d6:2532:a702:b59a:3dff/128"
       ],
-      "private_key": "iM6rgTSb08Sj86qbVLMolkIH6le0yX6Do7P6xghrrFM=",
-      "server": "162.159.193.63",
-      "server_port": 1180,
+      "private_key": "gLGWregq45lKvAMpTyHpX1Hsh5gfGUGyoERR94xRslc=",
+      "server": "162.159.192.118",
+      "server_port": 1070,
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
       "reserved": "AAAA",
       "mtu": 1280,
       "fake_packets": "5-10"
-    },
-    {
-      "type": "wireguard",
-      "tag": "Warp_ir § 1",
-      "detour": "Warp_in_Warp § 0",
-      "local_address": [
-        "172.16.0.2/24",
-        "2606:4700:110:85c1:81d9:d5e8:84c4:e30b/128"
-      ],
-      "private_key": "eJJkjpMC7P9EDPFgLoJ82aV3VbTMjA40HRpfXEkJbko=",
-      "server": "188.114.97.97",
-      "server_port": 500,
-      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "AAAA",
-      "mtu": 1180
     },
     {
       "type": "dns",
@@ -142,15 +108,6 @@
     {
       "type": "direct",
       "tag": "direct"
-    },
-    {
-      "type": "direct",
-      "tag": "direct-fragment",
-      "tls_fragment": {
-        "enabled": true,
-        "size": "10-100",
-        "sleep": "50-200"
-      }
     },
     {
       "type": "direct",
@@ -170,8 +127,7 @@
     },
     "rules": [
       {
-
-"inbound": "dns-in",
+        "inbound": "dns-in",
         "outbound": "dns-out"
       },
       {
@@ -191,6 +147,10 @@
     "override_android_vpn": true
   },
   "experimental": {
+    "cache_file": {
+      "enabled": true,
+      "path": "clash.db"
+    },
     "clash_api": {
       "external_controller": "127.0.0.1:6756"
     }
