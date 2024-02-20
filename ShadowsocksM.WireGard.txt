@@ -108,7 +108,7 @@
     },
     {
       "type": "wireguard",
-      "tag": "ShadowsocksM.WireGard",
+      "tag": "ShadowsocksM.WireGard2",
       "local_address": [
         "172.16.0.2/32",
         "2606:4700:110:82d2:8aa5:26a5:3a7a:c9e8/128"
@@ -174,15 +174,15 @@
       "fake_packets_size": "40-100",
       "fake_packets_delay": "20-250"
     },
-    {
+     {
       "type": "wireguard",
-      "tag": "ShadowsocksM.WireGard1",
+      "tag": "ShadowsocksM.WireGard6",
       "detour": "ShadowsocksM.WireGard",
       "local_address": [
         "172.16.0.2/32",
         "2606:4700:110:8c41:7cbc:b82d:1acd:4fd/128"
       ],
-      "private_key": "+OVrzxeUTBINpcUavX1Xn4nkEbm5RInb+gZOtscMNUw=",
+      "private_key": "KJsvwvHOQRS8l0/7rHUxUZIst9/JYESaeWDIHHT11Hw=",
       "server": "162.159.192.209",
       "server_port": 4198,
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
