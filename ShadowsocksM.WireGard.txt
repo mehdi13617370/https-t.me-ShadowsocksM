@@ -107,7 +107,7 @@
         "ShadowsocksM_7",
         "ShadowsocksM_8",
         "ShadowsocksM_9",
-        "ShadowsocksM_10"	
+        "ShadowsocksM_10"	 
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s"
@@ -231,6 +231,7 @@
       "fake_packets_size": "40-100",
       "fake_packets_delay": "20-250"
     },
+	
     {
       "type": "wireguard",
       "tag": "ShadowsocksM_8",
@@ -248,6 +249,7 @@
       "fake_packets_size": "40-100",
       "fake_packets_delay": "20-250"
     },
+	
     {
       "type": "wireguard",
       "tag": "ShadowsocksM_9",
@@ -265,6 +267,7 @@
       "fake_packets_size": "40-100",
       "fake_packets_delay": "20-250"
     },
+	
     {
       "type": "wireguard",
       "tag": "ShadowsocksM_10",
