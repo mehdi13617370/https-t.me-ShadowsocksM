@@ -1,0 +1,888 @@
+{
+  "log": {
+    "disabled": false,
+    "level": "info",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "proxyDns",
+        "address": "8.8.8.8",
+        "detour": "select"
+      },
+      {
+        "tag": "localDns",
+        "address": "https://223.5.5.5/dns-query",
+        "detour": "direct"
+      },
+      {
+        "tag": "block",
+        "address": "rcode://success"
+      }
+    ],
+    "rules": [
+      {
+        "domain": [
+          "ghproxy.com",
+          "cdn.jsdelivr.net",
+          "testingcf.jsdelivr.net"
+        ],
+        "server": "localDns"
+      },
+      {
+        "geosite": [
+          "category-ads-all"
+        ],
+        "server": "block"
+      },
+      {
+        "server": "localDns",
+        "outbound": "any",
+        "disable_cache": true
+      },
+      {
+        "geosite": [
+          "cn"
+        ],
+        "server": "localDns"
+      },
+      {
+        "server": "localDns",
+        "clash_mode": "direct"
+      },
+      {
+        "server": "proxyDns",
+        "clash_mode": "global"
+      },
+      {
+        "geosite": [
+          "geolocation-!cn"
+        ],
+        "server": "proxyDns"
+      }
+    ],
+    "strategy": "ipv4_only"
+  },
+  "inbounds": [
+    {
+      "sniff": true,
+      "type": "mixed",
+      "listen": "127.0.0.1",
+      "listen_port": 1081
+    },
+    {
+      "stack": "system",
+      "auto_route": true,
+      "inet4_address": "172.19.0.1/30",
+      "mtu": 9000,
+      "sniff": true,
+      "strict_route": true,
+      "type": "tun",
+      "platform": {
+        "http_proxy": {
+          "enabled": true,
+          "server": "127.0.0.1",
+          "server_port": 1081
+        }
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "select",
+      "type": "selector",
+      "outbounds": [
+        "auto",
+        "https://t.me/ShadowsocksM_1",
+        "https://t.me/ShadowsocksM_2",
+        "https://t.me/ShadowsocksM_3",
+        "https://t.me/ShadowsocksM_4",
+        "https://t.me/ShadowsocksM_5",
+        "https://t.me/ShadowsocksM_6",
+        "https://t.me/ShadowsocksM_7",
+        "https://t.me/ShadowsocksM_8",
+        "https://t.me/ShadowsocksM_9",
+        "https://t.me/ShadowsocksM_10",
+        "https://t.me/ShadowsocksM_11",
+        "https://t.me/ShadowsocksM_12",
+        "https://t.me/ShadowsocksM_13",
+        "https://t.me/ShadowsocksM_14",
+        "https://t.me/ShadowsocksM_15",
+        "https://t.me/ShadowsocksM_16"
+      ]
+    },
+    {
+      "tag": "auto",
+      "type": "urltest",
+      "outbounds": [
+        "https://t.me/ShadowsocksM_1",
+        "https://t.me/ShadowsocksM_2",
+        "https://t.me/ShadowsocksM_3",
+        "https://t.me/ShadowsocksM_4",
+        "https://t.me/ShadowsocksM_5",
+        "https://t.me/ShadowsocksM_6",
+        "https://t.me/ShadowsocksM_7",
+        "https://t.me/ShadowsocksM_8",
+        "https://t.me/ShadowsocksM_9",
+        "https://t.me/ShadowsocksM_10",
+        "https://t.me/ShadowsocksM_11",
+        "https://t.me/ShadowsocksM_12",
+        "https://t.me/ShadowsocksM_13",
+        "https://t.me/ShadowsocksM_14",
+        "https://t.me/ShadowsocksM_15",
+        "https://t.me/ShadowsocksM_16"
+      ],
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "1m",
+      "tolerance": 50
+    },
+    {
+      "tag": "🤖 OpenAI",
+      "type": "selector",
+      "outbounds": [
+        "direct",
+        "https://t.me/ShadowsocksM_1",
+        "https://t.me/ShadowsocksM_2",
+        "https://t.me/ShadowsocksM_3",
+        "https://t.me/ShadowsocksM_4",
+        "https://t.me/ShadowsocksM_5",
+        "https://t.me/ShadowsocksM_6",
+        "https://t.me/ShadowsocksM_7",
+        "https://t.me/ShadowsocksM_8",
+        "https://t.me/ShadowsocksM_9",
+        "https://t.me/ShadowsocksM_10",
+        "https://t.me/ShadowsocksM_11",
+        "https://t.me/ShadowsocksM_12",
+        "https://t.me/ShadowsocksM_13",
+        "https://t.me/ShadowsocksM_14",
+        "https://t.me/ShadowsocksM_15",
+        "https://t.me/ShadowsocksM_16"
+      ]
+    },
+    {
+      "tag": "🌌 Google",
+      "type": "selector",
+      "outbounds": [
+        "https://t.me/ShadowsocksM_1",
+        "https://t.me/ShadowsocksM_2",
+        "https://t.me/ShadowsocksM_3",
+        "https://t.me/ShadowsocksM_4",
+        "https://t.me/ShadowsocksM_5",
+        "https://t.me/ShadowsocksM_6",
+        "https://t.me/ShadowsocksM_7",
+        "https://t.me/ShadowsocksM_8",
+        "https://t.me/ShadowsocksM_9",
+        "https://t.me/ShadowsocksM_10",
+        "https://t.me/ShadowsocksM_11",
+        "https://t.me/ShadowsocksM_12",
+        "https://t.me/ShadowsocksM_13",
+        "https://t.me/ShadowsocksM_14",
+        "https://t.me/ShadowsocksM_15",
+        "https://t.me/ShadowsocksM_16"
+      ]
+    },
+    {
+      "tag": "📟 Telegram",
+      "type": "selector",
+      "outbounds": [
+        "https://t.me/ShadowsocksM_1",
+        "https://t.me/ShadowsocksM_2",
+        "https://t.me/ShadowsocksM_3",
+        "https://t.me/ShadowsocksM_4",
+        "https://t.me/ShadowsocksM_5",
+        "https://t.me/ShadowsocksM_6",
+        "https://t.me/ShadowsocksM_7",
+        "https://t.me/ShadowsocksM_8",
+        "https://t.me/ShadowsocksM_9",
+        "https://t.me/ShadowsocksM_10",
+        "https://t.me/ShadowsocksM_11",
+        "https://t.me/ShadowsocksM_12",
+        "https://t.me/ShadowsocksM_13",
+        "https://t.me/ShadowsocksM_14",
+        "https://t.me/ShadowsocksM_15",
+        "https://t.me/ShadowsocksM_16"
+      ]
+    },
+    {
+      "tag": "🐦 Twitter",
+      "type": "selector",
+      "outbounds": [
+        "https://t.me/ShadowsocksM_1",
+        "https://t.me/ShadowsocksM_2",
+        "https://t.me/ShadowsocksM_3",
+        "https://t.me/ShadowsocksM_4",
+        "https://t.me/ShadowsocksM_5",
+        "https://t.me/ShadowsocksM_6",
+        "https://t.me/ShadowsocksM_7",
+        "https://t.me/ShadowsocksM_8",
+        "https://t.me/ShadowsocksM_9",
+        "https://t.me/ShadowsocksM_10",
+        "https://t.me/ShadowsocksM_11",
+        "https://t.me/ShadowsocksM_12",
+        "https://t.me/ShadowsocksM_13",
+        "https://t.me/ShadowsocksM_14",
+        "https://t.me/ShadowsocksM_15",
+        "https://t.me/ShadowsocksM_16"
+      ]
+    },
+    {
+      "tag": "👤 Facebook",
+      "type": "selector",
+      "outbounds": [
+        "https://t.me/ShadowsocksM_1",
+        "https://t.me/ShadowsocksM_2",
+        "https://t.me/ShadowsocksM_3",
+        "https://t.me/ShadowsocksM_4",
+        "https://t.me/ShadowsocksM_5",
+        "https://t.me/ShadowsocksM_6",
+        "https://t.me/ShadowsocksM_7",
+        "https://t.me/ShadowsocksM_8",
+        "https://t.me/ShadowsocksM_9",
+        "https://t.me/ShadowsocksM_10",
+        "https://t.me/ShadowsocksM_11",
+        "https://t.me/ShadowsocksM_12",
+        "https://t.me/ShadowsocksM_13",
+        "https://t.me/ShadowsocksM_14",
+        "https://t.me/ShadowsocksM_15",
+        "https://t.me/ShadowsocksM_16"
+      ]
+    },
+    {
+      "tag": "🛍️ Amazon",
+      "type": "selector",
+      "outbounds": [
+        "direct",
+        "https://t.me/ShadowsocksM_1",
+        "https://t.me/ShadowsocksM_2",
+        "https://t.me/ShadowsocksM_3",
+        "https://t.me/ShadowsocksM_4",
+        "https://t.me/ShadowsocksM_5",
+        "https://t.me/ShadowsocksM_6",
+        "https://t.me/ShadowsocksM_7",
+        "https://t.me/ShadowsocksM_8",
+        "https://t.me/ShadowsocksM_9",
+        "https://t.me/ShadowsocksM_10",
+        "https://t.me/ShadowsocksM_11",
+        "https://t.me/ShadowsocksM_12",
+        "https://t.me/ShadowsocksM_13",
+        "https://t.me/ShadowsocksM_14",
+        "https://t.me/ShadowsocksM_15",
+        "https://t.me/ShadowsocksM_16"
+      ]
+    },
+    {
+      "tag": "🍎 Apple",
+      "type": "selector",
+      "outbounds": [
+        "direct",
+        "https://t.me/ShadowsocksM_1",
+        "https://t.me/ShadowsocksM_2",
+        "https://t.me/ShadowsocksM_3",
+        "https://t.me/ShadowsocksM_4",
+        "https://t.me/ShadowsocksM_5",
+        "https://t.me/ShadowsocksM_6",
+        "https://t.me/ShadowsocksM_7",
+        "https://t.me/ShadowsocksM_8",
+        "https://t.me/ShadowsocksM_9",
+        "https://t.me/ShadowsocksM_10",
+        "https://t.me/ShadowsocksM_11",
+        "https://t.me/ShadowsocksM_12",
+        "https://t.me/ShadowsocksM_13",
+        "https://t.me/ShadowsocksM_14",
+        "https://t.me/ShadowsocksM_15",
+        "https://t.me/ShadowsocksM_16"
+      ]
+    },
+    {
+      "tag": "🧩 Microsoft",
+      "type": "selector",
+      "outbounds": [
+        "direct",
+        "https://t.me/ShadowsocksM_1",
+        "https://t.me/ShadowsocksM_2",
+        "https://t.me/ShadowsocksM_3",
+        "https://t.me/ShadowsocksM_4",
+        "https://t.me/ShadowsocksM_5",
+        "https://t.me/ShadowsocksM_6",
+        "https://t.me/ShadowsocksM_7",
+        "https://t.me/ShadowsocksM_8",
+        "https://t.me/ShadowsocksM_9",
+        "https://t.me/ShadowsocksM_10",
+        "https://t.me/ShadowsocksM_11",
+        "https://t.me/ShadowsocksM_12",
+        "https://t.me/ShadowsocksM_13",
+        "https://t.me/ShadowsocksM_14",
+        "https://t.me/ShadowsocksM_15",
+        "https://t.me/ShadowsocksM_16"
+      ]
+    },
+    {
+      "tag": "🎮 Game",
+      "type": "selector",
+      "outbounds": [
+        "direct",
+        "https://t.me/ShadowsocksM_1",
+        "https://t.me/ShadowsocksM_2",
+        "https://t.me/ShadowsocksM_3",
+        "https://t.me/ShadowsocksM_4",
+        "https://t.me/ShadowsocksM_5",
+        "https://t.me/ShadowsocksM_6",
+        "https://t.me/ShadowsocksM_7",
+        "https://t.me/ShadowsocksM_8",
+        "https://t.me/ShadowsocksM_9",
+        "https://t.me/ShadowsocksM_10",
+        "https://t.me/ShadowsocksM_11",
+        "https://t.me/ShadowsocksM_12",
+        "https://t.me/ShadowsocksM_13",
+        "https://t.me/ShadowsocksM_14",
+        "https://t.me/ShadowsocksM_15",
+        "https://t.me/ShadowsocksM_16"
+      ]
+    },
+    {
+      "tag": "📺 Bilibili",
+      "type": "selector",
+      "outbounds": [
+        "direct"
+      ]
+    },
+    {
+      "tag": "🎬 MediaVideo",
+      "type": "selector",
+      "outbounds": [
+        "direct",
+        "https://t.me/ShadowsocksM_1",
+        "https://t.me/ShadowsocksM_2",
+        "https://t.me/ShadowsocksM_3",
+        "https://t.me/ShadowsocksM_4",
+        "https://t.me/ShadowsocksM_5",
+        "https://t.me/ShadowsocksM_6",
+        "https://t.me/ShadowsocksM_7",
+        "https://t.me/ShadowsocksM_8",
+        "https://t.me/ShadowsocksM_9",
+        "https://t.me/ShadowsocksM_10",
+        "https://t.me/ShadowsocksM_11",
+        "https://t.me/ShadowsocksM_12",
+        "https://t.me/ShadowsocksM_13",
+        "https://t.me/ShadowsocksM_14",
+        "https://t.me/ShadowsocksM_15",
+        "https://t.me/ShadowsocksM_16"
+      ]
+    },
+    {
+      "tag": "🌏 !cn",
+      "type": "selector",
+      "outbounds": [
+        "direct",
+        "https://t.me/ShadowsocksM_1",
+        "https://t.me/ShadowsocksM_2",
+        "https://t.me/ShadowsocksM_3",
+        "https://t.me/ShadowsocksM_4",
+        "https://t.me/ShadowsocksM_5",
+        "https://t.me/ShadowsocksM_6",
+        "https://t.me/ShadowsocksM_7",
+        "https://t.me/ShadowsocksM_8",
+        "https://t.me/ShadowsocksM_9",
+        "https://t.me/ShadowsocksM_10",
+        "https://t.me/ShadowsocksM_11",
+        "https://t.me/ShadowsocksM_12",
+        "https://t.me/ShadowsocksM_13",
+        "https://t.me/ShadowsocksM_14",
+        "https://t.me/ShadowsocksM_15",
+        "https://t.me/ShadowsocksM_16"
+      ]
+    },
+    {
+      "tag": "🌏 cn",
+      "type": "selector",
+      "outbounds": [
+        "direct",
+        "select"
+      ]
+    },
+    {
+      "tag": "🛑 AdBlock",
+      "type": "selector",
+      "outbounds": [
+        "block",
+        "direct"
+      ]
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    },
+    {
+      "tag": "block",
+      "type": "block"
+    },
+    {
+      "tag": "dns-out",
+      "type": "dns"
+    },
+    {
+      "server": "stats.defisaver.com",
+      "server_port": 443,
+      "tls": {
+        "enabled": true,
+        "server_name": "mitsuri.erenyeager.cloudns.biz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        },
+        "alpn": [
+          "http/1.1"
+        ]
+      },
+      "transport": {
+        "path": "/ed?=2048",
+        "type": "ws",
+        "max_early_data": 4096,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "uuid": "e5e34431-e29e-4821-a986-f3231933beb9",
+      "tag": "https://t.me/ShadowsocksM_1",
+      "type": "vless"
+    },
+    {
+      "server": "admin.ozonedesk.com",
+      "server_port": 443,
+      "tls": {
+        "enabled": true,
+        "server_name": "furina.erenyeager.cloudns.biz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        },
+        "alpn": [
+          "http/1.1"
+        ]
+      },
+      "transport": {
+        "path": "/ed?=2048",
+        "type": "ws",
+        "max_early_data": 4096,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "uuid": "38535031-ccc3-4a94-bd54-c68806486406",
+      "tag": "https://t.me/ShadowsocksM_2",
+      "type": "vless"
+    },
+    {
+      "server": "www.eligasht.com",
+      "server_port": 443,
+      "tls": {
+        "enabled": true,
+        "server_name": "eula.erenyeager.cloudns.biz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        },
+        "alpn": [
+          "http/1.1"
+        ]
+      },
+      "transport": {
+        "path": " /ed?=2048",
+        "type": "ws",
+        "max_early_data": 4096,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "uuid": "31aa719b-742f-430d-8a59-6abfbf538842",
+      "tag": "https://t.me/ShadowsocksM_3",
+      "type": "vless"
+    },
+    {
+      "server": "www.asamserver.com",
+      "server_port": 443,
+      "tls": {
+        "enabled": true,
+        "server_name": "navia.erenyeager.cloudns.biz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        },
+        "alpn": [
+          "http/1.1"
+        ]
+      },
+      "transport": {
+        "path": "/ed?=2048",
+        "type": "ws",
+        "max_early_data": 4096,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "uuid": "0b4b623c-2914-494d-b6b8-b03fbf4d6655",
+      "tag": "https://t.me/ShadowsocksM_4",
+      "type": "vless"
+    },
+    {
+      "server": "www.1000site.ir",
+      "server_port": 443,
+      "tls": {
+        "enabled": true,
+        "server_name": "yaemiko.erenyeager.cloudns.biz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        },
+        "alpn": [
+          "http/1.1"
+        ]
+      },
+      "transport": {
+        "path": "/ed?=2048",
+        "type": "ws",
+        "max_early_data": 4096,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "uuid": "7bedf632-b4c2-4e90-9d8b-f42ee7145534",
+      "tag": "https://t.me/ShadowsocksM_5",
+      "type": "vless"
+    },
+    {
+      "server": "offsitevisibility.com",
+      "server_port": 443,
+      "tls": {
+        "enabled": true,
+        "server_name": "random.erenyeager.cloudns.biz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        },
+        "alpn": [
+          "http/1.1"
+        ]
+      },
+      "transport": {
+        "path": "/vpnjantit/se2.vpnjantit.com",
+        "type": "ws",
+        "max_early_data": 4096,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "uuid": "9b5bdd66-d2e3-11ee-b29b-00163cfb5321",
+      "tag": "https://t.me/ShadowsocksM_6",
+      "type": "vless"
+    },
+    {
+      "server": "goldreviews.online",
+      "server_port": 443,
+      "tls": {
+        "enabled": true,
+        "server_name": "nezuko.erenyeager.cloudns.biz"
+      },
+      "transport": {
+        "path": "/vless/ee3-vless.sshmax.xyz",
+        "type": "ws",
+        "max_early_data": 4096,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "uuid": "8574c615-2bab-41e6-831d-58da00a1c5c3",
+      "tag": "https://t.me/ShadowsocksM_7",
+      "type": "vless"
+    },
+    {
+      "server": "0xzx.com",
+      "server_port": 443,
+      "tls": {
+        "enabled": true,
+        "server_name": "nezuko.erenyeager.cloudns.biz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        },
+        "alpn": [
+          "http/1.1"
+        ]
+      },
+      "transport": {
+        "path": "/VLESS/it-freevmess.privateip.net",
+        "type": "ws",
+        "max_early_data": 4096,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "uuid": "dfecf3d4-2d78-415e-ac67-35f5a4184a2c",
+      "tag": "https://t.me/ShadowsocksM_8",
+      "type": "vless"
+    },
+    {
+      "server": "shintaries.com",
+      "server_port": 443,
+      "tls": {
+        "enabled": true,
+        "server_name": "nezuko.erenyeager.cloudns.biz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        },
+        "alpn": [
+          "http/1.1"
+        ]
+      },
+      "transport": {
+        "path": "/VLESS/us-freevmess.privateip.net",
+        "type": "ws",
+        "max_early_data": 4096,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "uuid": "b61fabfd-d729-4b19-9e2f-07022c896265",
+      "tag": "https://t.me/ShadowsocksM_9",
+      "type": "vless"
+    },
+    {
+      "server": "www.speedtest.net",
+      "server_port": 8080,
+      "tls": {
+        "enabled": true,
+        "server_name": "xn--047h.xn--4oq36ed28d.ORG."
+      },
+      "transport": {
+        "path": "/@VPNCUSTOMIZE",
+        "type": "ws",
+        "max_early_data": 4096,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "uuid": "V2rayCUSTOMIZE",
+      "tag": "https://t.me/ShadowsocksM_10",
+      "type": "vless"
+    },
+    {
+      "server": "www.speedtest.net",
+      "server_port": 8080,
+      "tls": {
+        "enabled": true,
+        "server_name": "Parsashonam.我们累了.tech."
+      },
+      "transport": {
+        "path": "/",
+        "type": "ws",
+        "max_early_data": 4096,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "uuid": "Parsashonam-8",
+      "tag": "https://t.me/ShadowsocksM_11",
+      "type": "vless"
+    },
+    {
+      "server": "45.32.234.211",
+      "server_port": 443,
+      "tls": {
+        "enabled": true
+      },
+      "password": "y0qochAspE+u-HLfrip-",
+      "obfs": {
+        "type": "salamander",
+        "password": "2pU!"
+      },
+      "tag": "https://t.me/ShadowsocksM_12",
+      "type": "hysteria2"
+    },
+    {
+      "server": "64.110.25.11",
+      "server_port": 33337,
+      "tls": {
+        "enabled": true
+      },
+      "password": "dongtaiwang.com",
+      "tag": "https://t.me/ShadowsocksM_13",
+      "type": "hysteria2"
+    },
+    {
+      "server": "51.159.77.198",
+      "server_port": 29277,
+      "tls": {
+        "enabled": true
+      },
+      "password": "dongtaiwang.com",
+      "tag": "https://t.me/ShadowsocksM_14",
+      "type": "hysteria2"
+    },
+    {
+      "server": "51.159.77.198",
+      "server_port": 29277,
+      "tls": {
+        "enabled": true
+      },
+      "password": "dongtaiwang.com",
+      "tag": "https://t.me/ShadowsocksM_15",
+      "type": "hysteria2"
+    },
+    {
+      "server": "51.159.77.198",
+      "server_port": 29277,
+      "tls": {
+        "enabled": true
+      },
+      "password": "dongtaiwang.com",
+      "tag": "https://t.me/ShadowsocksM_16",
+      "type": "hysteria2"
+    }
+  ],
+  "route": {
+    "geoip": {
+      "download_url": "https://github.com/soffchen/sing-geoip/releases/latest/download/geoip.db",
+      "download_detour": "select"
+    },
+    "geosite": {
+      "download_url": "https://github.com/soffchen/sing-geosite/releases/latest/download/geosite.db",
+      "download_detour": "select"
+    },
+    "rules": [
+      {
+        "protocol": "dns",
+        "outbound": "dns-out"
+      },
+      {
+        "network": "udp",
+        "port": 443,
+        "outbound": "block"
+      },
+      {
+        "clash_mode": "direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "global",
+        "outbound": "select"
+      },
+      {
+        "domain": [
+          "v2rayse.com",
+          "cfmem.com",
+          "vpnse.org",
+          "cff.pw",
+          "tt.vg"
+        ],
+        "outbound": "select"
+      },
+      {
+        "domain": [
+          "clash.razord.top",
+          "yacd.metacubex.one",
+          "yacd.haishan.me",
+          "d.metacubex.one"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "geosite": [
+          "openai"
+        ],
+        "outbound": "🤖 OpenAI"
+      },
+      {
+        "geosite": [
+          "google",
+          "github"
+        ],
+        "geoip": [
+          "google"
+        ],
+        "outbound": "🌌 Google"
+      },
+      {
+        "geosite": [
+          "telegram"
+        ],
+        "geoip": [
+          "telegram"
+        ],
+        "outbound": "📟 Telegram"
+      },
+      {
+        "geosite": [
+          "twitter"
+        ],
+        "geoip": [
+          "twitter"
+        ],
+        "outbound": "🐦 Twitter"
+      },
+      {
+        "geosite": [
+          "facebook",
+          "instagram"
+        ],
+        "geoip": [
+          "facebook"
+        ],
+        "outbound": "👤 Facebook"
+      },
+      {
+        "geosite": [
+          "amazon"
+        ],
+        "outbound": "🛍️ Amazon"
+      },
+      {
+        "geosite": [
+          "apple-cn",
+          "apple"
+        ],
+        "outbound": "🍎 Apple"
+      },
+      {
+        "geosite": [
+          "microsoft"
+        ],
+        "outbound": "🧩 Microsoft"
+      },
+      {
+        "geosite": [
+          "category-games"
+        ],
+        "outbound": "🎮 Game"
+      },
+      {
+        "geosite": [
+          "bilibili"
+        ],
+        "outbound": "📺 Bilibili"
+      },
+      {
+        "geosite": [
+          "tiktok",
+          "netflix",
+          "hbo",
+          "disney",
+          "primevideo"
+        ],
+        "geoip": [
+          "netflix"
+        ],
+        "outbound": "🎬 MediaVideo"
+      },
+      {
+        "geosite": [
+          "geolocation-!cn"
+        ],
+        "outbound": "🌏 !cn"
+      },
+      {
+        "geosite": [
+          "cn"
+        ],
+        "geoip": [
+          "private",
+          "cn"
+        ],
+        "outbound": "🌏 cn"
+      },
+      {
+        "geosite": [
+          "category-ads-all"
+        ],
+        "outbound": "🛑 AdBlock"
+      }
+    ],
+    "auto_detect_interface": true,
+    "final": "select"
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true,
+      "path": "cache.db"
+    }
+  }
+}
