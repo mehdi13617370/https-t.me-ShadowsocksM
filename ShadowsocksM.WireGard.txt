@@ -86,11 +86,7 @@
         "ShadowsocksM_3",
         "ShadowsocksM_4",
         "ShadowsocksM_5",
-        "ShadowsocksM_6",
-        "ShadowsocksM_7",
-        "ShadowsocksM_8",
-        "ShadowsocksM_9",
-        "ShadowsocksM_10"	
+        "ShadowsocksM_6"	
       ],
       "default": "auto"
     },
@@ -103,11 +99,7 @@
         "ShadowsocksM_3",
         "ShadowsocksM_4",
         "ShadowsocksM_5",
-        "ShadowsocksM_6",
-        "ShadowsocksM_7",
-        "ShadowsocksM_8",
-        "ShadowsocksM_9",
-        "ShadowsocksM_10"	 
+        "ShadowsocksM_6"	 
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s"
@@ -120,8 +112,8 @@
         "2606:4700:110:8c2c:1a7e:29b6:3364:21a/128"
       ],
       "private_key": "+D/PGNn0ZZTaPA2MTNsodcvUsork7fHfo5UjRsuzinc=",
-      "server": "188.114.98.4",
-      "server_port": 864,
+      "server": "162.159.192.241",
+      "server_port": 3581,
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
       "reserved": "AAAA",
       "mtu": 1280,
@@ -137,8 +129,8 @@
         "2606:4700:110:8b21:226a:844d:293a:a43e/128"
       ],
       "private_key": "cCcdyFZsBHbYa7lZJwY87vpEQzII1/PTc7N/499JznU=",
-      "server": "162.159.192.100",
-      "server_port": 1002,
+      "server": "188.114.97.224",
+      "server_port": 8319,
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
       "reserved": "AAAA",
       "mtu": 1280,
@@ -154,8 +146,8 @@
         "2606:4700:110:844a:1ca2:4198:b655:4b34/128"
       ],
       "private_key": "8CVBN62Te5xx3trSacXXwEL/oAwGSOEdXgR/RMwhEl8=",
-      "server": "162.159.192.131",
-      "server_port": 5956,
+      "server": "188.114.99.26",
+      "server_port": 1010,
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
       "reserved": "AAAA",
       "mtu": 1280,
@@ -171,8 +163,8 @@
         "2606:4700:110:8dad:3a26:fca7:3329:aa96/128"
       ],
       "private_key": "IJHAn2Ple6cBEA21nqtlwmp8zcMx2BlDCPuB7aqpCno=",
-      "server": "162.159.192.153",
-      "server_port": 5956,
+      "server": "162.159.192.77",
+      "server_port": 955,
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
       "reserved": "AAAA",
       "mtu": 1280,
@@ -188,7 +180,7 @@
         "2606:4700:110:8611:3ae2:eac2:fea5:c224/128"
       ],
       "private_key": "QN1kl+qwl9sHjbWBHwUMZRk8JUn1Rqrgpvr42i60Gm8=",
-      "server": "162.159.192.172",
+      "server": "162.159.192.40",
       "server_port": 1002,
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
       "reserved": "AAAA",
@@ -207,77 +199,6 @@
       "private_key": "sP9y77N6Bk1eBGl/wZ/1wAEoIqJ7s5Zx+jOwTbPYM18=",
       "server": "162.159.192.20",
       "server_port": 5956,
-      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "AAAA",
-      "mtu": 1280,
-      "fake_packets": "5-10",
-      "fake_packets_size": "40-100",
-      "fake_packets_delay": "20-250"
-    },
-    {
-      "type": "wireguard",
-      "tag": "ShadowsocksM_7",
-      "local_address": [
-        "172.16.0.2/24",
-        "2606:4700:110:89cb:e816:58d2:ca1b:80bd/128"
-      ],
-      "private_key": "kCN2PFinT96nhMpa+65YS6jk0PIlvAdYDUKFO3V1X1c=",
-      "server": "162.159.192.80",
-      "server_port": 1002,
-      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "AAAA",
-      "mtu": 1280,
-      "fake_packets": "5-10",
-      "fake_packets_size": "40-100",
-      "fake_packets_delay": "20-250"
-    },
-	
-    {
-      "type": "wireguard",
-      "tag": "ShadowsocksM_8",
-      "local_address": [
-        "172.16.0.2/24",
-        "2606:4700:110:816c:9a23:75a:b160:acf3/128"
-      ],
-      "private_key": "wP9jP+P5sf9VauAWJZ2NV0HA5KRqlvOLslCQaMx6OWw=",
-      "server": "162.159.195.5",
-      "server_port": 5956,
-      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "AAAA",
-      "mtu": 1280,
-      "fake_packets": "5-10",
-      "fake_packets_size": "40-100",
-      "fake_packets_delay": "20-250"
-    },
-	
-    {
-      "type": "wireguard",
-      "tag": "ShadowsocksM_9",
-      "local_address": [
-        "172.16.0.2/24",
-        "2606:4700:110:8d53:6bb2:7c71:24f6:f91e/128"
-      ],
-      "private_key": "oFciBiasRmwX8CWU2XfbliIIJjEcY0RcqEJMGOLW6U0=",
-      "server": "162.159.192.223",
-      "server_port": 1002,
-      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "AAAA",
-      "mtu": 1280,
-      "fake_packets": "5-10",
-      "fake_packets_size": "40-100",
-      "fake_packets_delay": "20-250"
-    },
-	
-    {
-      "type": "wireguard",
-      "tag": "ShadowsocksM_10",
-      "local_address": [
-        "172.16.0.2/24",
-        "2606:4700:110:85df:4640:514b:7505:2b6f/128"
-      ],
-      "private_key": "wNaszQYxkcNOvc/k58ZEENrVnqQVcfvTXlPVA1SIBn4=",
-      "server": "162.159.192.40",
-      "server_port": 1002,
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
       "reserved": "AAAA",
       "mtu": 1280,
