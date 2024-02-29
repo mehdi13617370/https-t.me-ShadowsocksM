@@ -1,3 +1,11 @@
+hysteria://167.160.91.115:41189/?insecure=1&peer=www.amazon.cn&auth=bWAwIqINo7XDm1fUlXQGBifVIXoYs1ylgVKqWFKzK1XyDKuwNF&upmbps=11&downmbps=55&alpn=h3#https://t.me/ShadowsocksM
+hy2://dongtaiwang.com@64.110.25.11:33337/?insecure=1&sni=www.bing.com#https://t.me/ShadowsocksM
+hy2://b46cb204-5849-4b86-852d-8154fb8eb580@142.171.174.206:15090/?insecure=1&sni=www.bing.com#https://t.me/ShadowsocksM
+hy2://f6e4b19a3110d19d@66.135.28.59:443/?insecure=1&sni=www.apple.com%0A&obfs=salamander&obfs-password=8c3ce17b#https://t.me/ShadowsocksM
+hy2://dongtaiwang.com@51.158.54.46:44550/?insecure=1&sni=bing.com#https://t.me/ShadowsocksM
+hy2://dongtaiwang.com@51.159.77.198:29277/?insecure=1&sni=www.bing.com#https://t.me/ShadowsocksM
+hy2://sTeki1$re5!8swohopro@78.141.215.68:443/?insecure=1&sni=google.com&obfs=salamander&obfs-password=sTeki1%24re5%218swohopro#https://t.me/ShadowsocksM
+hy2://fokaS4id3bretay-7rit@78.141.216.41:443/?insecure=1&sni=google.com&obfs=salamander&obfs-password=fokaS4id3bretay-7rit#https://t.me/ShadowsocksM
 vless://7bedf632-b4c2-4e90-9d8b-f42ee7145534@www.1000site.ir:443?security=tls&sni=yaeof09rjrjdowp3ojfif8fmiko.erenyeager.cloudns.biz&alpn=http/1.1&fp=randomized&type=ws&path=/ed?%3D2048&host=yaemiko.erenyeager.cloudns.biz&encryption=none#https://t.me/ShadowsocksM
 vmess://eyJhZGQiOiJ3d3cuYXNhbXNlcnZlci5jb20iLCJhaWQiOiIwIiwiaG9zdCI6Im1pa2FzYS5lcmVueWVhZ2VyLmNsb3VkbnMuYml6IiwiaWQiOiI1ZjcyNmZlMy1kODJlLTRkYTUtYTcxMS04YWYwY2JiMmI2ODIiLCJuZXQiOiJ3cyIsInBhdGgiOiIvNTZjNWQyYjEtNTc1Zi00NzE4LWFkMzctNGNiMWZiMGQ0NGRjLmFzb3VsLWF2YS50b3AvYXp1bWFzZS5yZW4iLCJwb3J0IjoiNDQzIiwicHMiOiLwn4ex8J+HuiAgQmlzc2VuIiwic2N5IjoiYXV0byIsInNuaSI6Im5qanRhdmlkaGVUR0dhZGZocjczanIuZXJlbnllYWdlci5jbG91ZG5zLmJpeiIsInRscyI6InRscyIsInR5cGUiOiIiLCJ2IjoiMiJ9#https://t.me/ShadowsocksM
 vmess://eyJhZGQiOiJtY2Rvd2VsbHNyZXBhaXIuY29tIiwiYWlkIjoiMCIsImhvc3QiOiJtaWthc2EuZXJlbnllYWdlci5jbG91ZG5zLmJpeiIsImlkIjoiZjU4NGRlMTUtMjAzNC00MTcwLWE3MjMtZjQ4YzJiYWU1ZTBmIiwibmV0Ijoid3MiLCJwYXRoIjoiL2FmcmhtczE2di5iZXN0eHJheS5idXp6L2xpbmt3cyIsInBvcnQiOiI0NDMiLCJwcyI6IiDwn4ep8J+HqiDwn4ep8J+HqvCfkYAg8J+HuvCfh7ggIiwic2N5IjoiYXV0byIsInNuaSI6Im1pa2FzYnBwamZkc3Njam1udmZnYS5lcmVueWVhZ2VyLmNsb3VkbnMuYml6IiwidGxzIjoidGxzIiwidHlwZSI6IiIsInYiOiIyIn0=#https://t.me/ShadowsocksM
