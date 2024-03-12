@@ -105,7 +105,7 @@
       "interval": "10m0s"
     },
     {
-      "type": "Warp Iran",
+      "type": "Warp",
       "tag": "ShadowsocksM_1",
       "local_address": [
         "172.16.0.2/24",
@@ -122,7 +122,7 @@
       "fake_packets_delay": "20-250"
     },
     {
-      "type": "Warp iran1",
+      "type": "Warp",
       "tag": "ShadowsocksM_2",
       "local_address": [
         "172.16.0.2/24",
@@ -139,7 +139,7 @@
       "fake_packets_delay": "20-250"
     },
     {
-      "type": "Warp Iran2",
+      "type": "Warp",
       "tag": "ShadowsocksM_3",
       "local_address": [
         "172.16.0.2/24",
@@ -156,7 +156,7 @@
       "fake_packets_delay": "20-250"
     },
     {
-      "type": "Warp Iran3",
+      "type": "Warp",
       "tag": "ShadowsocksM_4",
       "local_address": [
         "172.16.0.2/24",
@@ -173,7 +173,7 @@
       "fake_packets_delay": "20-250"
     },
     {
-      "type": "Warp Iran4",
+      "type": "Warp",
       "tag": "ShadowsocksM_5",
       "local_address": [
         "172.16.0.2/24",
@@ -190,7 +190,7 @@
       "fake_packets_delay": "20-250"
     },
     {
-      "type": "Wrap Iran5",
+      "type": "Wrap",
       "tag": "ShadowsocksM_6",
       "local_address": [
         "172.16.0.2/24",
